@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "calculate-my-score"
-version = "0.1.0"
+version = "0.1.1"
 description = "Calculate your score by one simple command!"
 authors = ["Bar Hochman"]
 include = ["calculate_my_score/**"]
