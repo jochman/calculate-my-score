@@ -31,7 +31,7 @@ jobs:
     - run: poetry install --no-interaction --no-root
       if: steps.cache-deps.outputs.cache-hit != 'true'
     - run: poetry install --no-interaction
-    - run: poetry run pytest tests -junit-xml=report_path/
+    - run: poetry run pytest tests --junit-xml=report_path/
     - name: Publish Test Report
       uses: mikepenz/action-junit-report@v3
       if: always() # always run even if the previous step fails
