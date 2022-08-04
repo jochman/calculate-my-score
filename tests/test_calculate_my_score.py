@@ -1,6 +1,7 @@
-from typer.testing import CliRunner
-from calculate_my_score.main import app
 import pytest
+from typer.testing import CliRunner
+
+from calculate_my_score.main import app
 
 runner = CliRunner()
 
