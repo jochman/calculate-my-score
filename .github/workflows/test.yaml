@@ -1,0 +1,22 @@
+name: GitHub Actions Demo
+on: [push]
+
+jobs:
+  RunTests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [ '8', '9', '10 ']
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
+      with:
+        python-version: 3.${{ matrix.python-version }}
+        cache: 'poetry'
+    - run: poetry install
+    - run: poetry run pytest tests -junit-xml=report_path/
+    - name: Publish Test Report
+      uses: mikepenz/action-junit-report@v3
+      if: always() # always run even if the previous step fails
+      with:
+        report_paths: '**/test-results/junit.xml'
