@@ -1,10 +1,12 @@
 [tool.poetry]
 name = "calculate-my-score"
-version = "0.1.1"
+version = "0.1.2"
 description = "Calculate your score by one simple command!"
 authors = ["Bar Hochman"]
 include = ["calculate_my_score/**"]
 readme = "README.md"
+repository = "https://github.com/jochman/calculate-my-score"
+license = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.8"

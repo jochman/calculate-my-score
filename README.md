@@ -20,7 +20,7 @@ We shall run the next command:
 
 ```shell
 ❯ calculate-my-score 90:20 80:100
-Your score is 81.67/120
+🎉 Your score is 81.67/120 🎉 
 ```
 
 ## Thanks

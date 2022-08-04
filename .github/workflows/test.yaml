@@ -39,7 +39,7 @@ jobs:
         report_paths: '**/test-results/junit.xml'
   deploy:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    if: startsWith(github.ref, 'refs/tags/v')
     needs: test
     steps:
     - uses: actions/checkout@v3
