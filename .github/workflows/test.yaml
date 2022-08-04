@@ -43,7 +43,7 @@ jobs:
     steps:
     - name: Publish to pypi
       if: github.ref == 'refs/heads/main'
-      uses: Rubics/poetry-publish@v1.12
+      uses: JRubics/poetry-publish@v1.12
       with:
         repository_name: "calculate-my-score"
         pypi-token: ${{ secrets.PYPI_TOKEN }}
