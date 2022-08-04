@@ -1,12 +1,14 @@
-import typer
+from typing import List
+
 import rich
+import typer
 
 app = typer.Typer()
 
 
 @app.command()
 def main(
-    scores: list[str] = typer.Argument(
+    scores: List[str] = typer.Argument(
         ...,
         show_default=False,
         help="Pairs of score in the format of SCORE:WEIGHT",
