@@ -6,7 +6,7 @@ authors = ["Bar Hochman"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.8"
 typer = "^0.6.1"
 rich = "^12.5.1"
 pytest = "^7.1.2"
