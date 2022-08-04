@@ -39,10 +39,10 @@ jobs:
         report_paths: '**/test-results/junit.xml'
   deploy:
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
     needs: test
     steps:
     - name: Publish to pypi
-      if: github.ref == 'refs/heads/main'
       uses: JRubics/poetry-publish@v1.12
       with:
         repository_name: "calculate-my-score"
