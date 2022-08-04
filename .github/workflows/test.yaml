@@ -1,8 +1,8 @@
-name: Run Pytest
+name: Test and Deploy
 on: [push]
 
 jobs:
-  RunTests:
+  test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -37,3 +37,13 @@ jobs:
       if: always() # always run even if the previous step fails
       with:
         report_paths: '**/test-results/junit.xml'
+  deploy:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    needs: test
+    steps:
+    - name: Publish to pypi
+      uses: JRubics/poetry-publish@v1.12
+      with:
+        repository_name: "calculate-my-score"
+        pypi-token: ${{ secrets.PYPI_TOKEN }}
