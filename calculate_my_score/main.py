@@ -21,4 +21,4 @@ def main(
         total += weight
         scores_for_weight += score * weight
     score_made = scores_for_weight / total
-    rich.print(f"Your score is {score_made:.2f}/{total:.0f}")
+    rich.print(f"🎉 Your score is {score_made:.2f}/{total:.0f} 🎉 ")
